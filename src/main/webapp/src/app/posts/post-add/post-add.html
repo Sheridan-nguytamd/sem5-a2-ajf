@@ -1,0 +1,25 @@
+<div class="card mb-4">
+	<div class="card-header bg-primary text-white">{{
+		postService.formPost.id ? 'Edit Post' : 'Create New Post' }}</div>
+	<div class="card-body">
+		<form (submit)="submitPost()">
+			<div class="mb-3">
+				<label class="form-label">Author Name</label> <input type="text"
+					class="form-control" name="author"
+					[(ngModel)]="postService.formPost.author" required>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Date & Time</label> <input type="text"
+					class="form-control" name="dateTime"
+					[(ngModel)]="postService.formPost.dateTime" required>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Technical Specifications</label>
+				<textarea class="form-control" name="techSpecs" rows="3"
+					[(ngModel)]="postService.formPost.techSpecs" required></textarea>
+			</div>
+			<button type="submit" class="btn btn-success">{{
+				postService.formPost.id ? 'Update Post' : 'Publish Post' }}</button>
+		</form>
+	</div>
+</div>

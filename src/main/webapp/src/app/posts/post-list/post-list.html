@@ -1,0 +1,18 @@
+<div class="card">
+	<div class="card-header bg-dark text-white">Current Posts</div>
+	<ul class="list-group list-group-flush">
+		@for (post of postService.posts(); track post.id) {
+		<li class="list-group-item">
+			<div class="d-flex justify-content-between mb-2">
+				<strong>{{ post.author }}</strong>
+				<span class="badge bg-secondary">{{ post.dateTime }}</span>
+			</div>
+			<p class="mb-3">{{ post.techSpecs }}</p>
+			<div class="text-end">
+				<button class="btn btn-warning btn-sm me-2" (click)="edit(post)">Edit</button>
+				<button class="btn btn-danger btn-sm" (click)="delete(post.id)">Delete</button>
+			</div>
+		</li> 
+		}
+	</ul>
+</div>
