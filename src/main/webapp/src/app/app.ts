@@ -8,5 +8,4 @@ import { Posts } from './posts/posts';
   styleUrl: './app.css'
 })
 export class App {
-  //protected readonly title = signal('webapp');
 }
